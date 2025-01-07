@@ -1,0 +1,11 @@
+The following CSS code snippet exhibits an uncommon error related to the `calc()` function and percentage units within a `@media` query:
+
+```css
+@media (max-width: 768px) {
+  .container {
+    width: calc(50% - 20px);
+  }
+}
+```
+
+This code intends to make the `.container` element occupy 50% of the available width, minus 20 pixels, on screens with a maximum width of 768 pixels.  However, the `calc()` function's behavior with percentages within a `@media` query can be unexpected.  The percentage is relative to the *parent* element's width, *not* the viewport width. If the parent element's width is less than the viewport width (e.g., due to a containing element with a fixed width), the resulting width might not be as intended.
