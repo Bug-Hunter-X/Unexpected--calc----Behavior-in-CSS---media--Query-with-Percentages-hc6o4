@@ -1,0 +1,11 @@
+To solve this issue and ensure the intended layout, we can utilize viewport width units (`vw`).  Here's the corrected CSS:
+
+```css
+@media (max-width: 768px) {
+  .container {
+    width: calc(50vw - 20px);
+  }
+}
+```
+
+By using `50vw`, the calculation now correctly uses 50% of the viewport width as the base, providing the expected behavior regardless of the parent's width.
